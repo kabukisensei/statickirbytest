@@ -1,0 +1,201 @@
+/* Slider */
+
+.slider {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+  &.slick-initialized {
+    opacity: 1;
+    -webkit-animation: scale-up-center-small 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center-small 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  .column {
+    padding: 0;
+  }
+}
+
+
+.slick-slider {
+  a {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .slick-arrow {
+    opacity: 0 !important;
+    transition: opacity .2s ease-in-out;
+  }
+
+  &:hover {
+    .slick-arrow {
+      opacity: 1 !important;
+    }
+  }
+}
+
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+
+  [dir="rtl"] & {
+    float: right;
+  }
+
+  img {
+    display: block;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  display: none;
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-prev,
+.slick-next {
+  display: none;
+  z-index: 9999;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: calc(50% - 7px);
+  display: block;
+  padding: 15px 15px;
+  cursor: pointer;
+  border: none;
+  color: #000;
+  background: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.slick-prev {
+  left: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30'%3E%3Ctitle%3Eframe c arrow left%3C/title%3E%3Cg class='nc-icon-wrapper' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' fill='%23ffffff' stroke='%23ffffff'%3E%3Ccircle fill='none' stroke='%23ffffff' stroke-miterlimit='10' cx='12' cy='12' r='11'/%3E%3Cpolyline data-color='color-2' fill='none' stroke-miterlimit='10' points=' 14,16 10,12 14,8 '/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.slick-next {
+  right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30'%3E%3Ctitle%3Eframe c arrow right%3C/title%3E%3Cg class='nc-icon-wrapper' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' fill='%23ffffff' stroke='%23ffffff'%3E%3Ccircle fill='none' stroke='%23ffffff' stroke-miterlimit='10' cx='12' cy='12' r='11'/%3E%3Cpolyline data-color='color-2' fill='none' stroke-miterlimit='10' points=' 10,8 14,12 10,16 '/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@-webkit-keyframes scale-up-center-small {
+  0% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center-small {
+  0% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
